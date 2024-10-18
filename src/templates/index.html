@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/7b12bcc245.js" crossorigin="anonymous"></script>
+  <title>Rafaela & Alberson</title>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">R&A</label>
+    <ul class="text">
+      <li><a href="#home" onclick="myFunction()">INÍCIO</a></li>
+      <li><a href="#story" onclick="myFunction()">NOSSA HISTÓRIA</a></li>
+      <li><a href="#rsvp" onclick="myFunction()">CONFIRME SUA PRESENÇA</a></li>
+      <li><a href="#gifts" onclick="myFunction()">PRESENTES</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="home hz-margin">
+    <h3>Vamos casar!</h3>
+    <h1>Rafaela & Alberson</h1>
+    <div class="container-out">
+
+      <div class="container-in text">
+        Sábado, 18 de janeiro, 2025 <br>
+        Vitória, Espírito Santo
+
+        <button class="huge-btn" onclick="document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });">
+          Confirme sua presença
+        </button>
+
+      </div>
+      <div class="home-img" id="home-img-lg"></div>
+    </div>
+  </div>
+
+
+  <div class="home-img home-img-sm"></div>
+  <div class="timeline hz-margin reveal">
+    <h2>Celbrando nosso amor<br>Com as pessoas que amamos
+    </h2>
+    <div class="timeline-container">
+      <div class="timeline-img"></div>
+      <div class="timings">
+        <br>
+        <br>
+        <h3>01.&nbsp &nbsp Cerimônia</h3>
+        <div class="text">10:30 da manhã <br>
+          Catedral Metropolitana de Vitória</div>
+        <h3>02.&nbsp &nbsp Recepção</h3>
+        <div class="text">Tindolelê Lounge, Praia da Costa</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="v-reposition-container">
+    <div class="h-reposition-container">
+
+
+      <div id="story" class="hz-margin">
+        <h3 class="reveal">A nossa<br>
+          história<br>♥︎
+        </h3>
+        <p class="text reveal">Nós nos conhecemos em 13 de novembro de 2021 no Beer Degusta, no Shopping Vila Velha.
+          Nossa madrinha Ariely nos apresentou e a partir daí não nos desgrudamos mais! Começamos a namorar em
+          25 de janeiro de 2022 e, com nossas cadelinhas Pérola e Rubi, e o nosso anjinho Ottinho, formamos nossa família!</p>
+      </div>
+
+
+      <div class="gallery hz-margin reveal">
+        <div class="gallery-item">
+          <div class="gallery-img"
+            style="background-position: 70%; background-image: url(assets/img/rafaela.jpg); transform: scaleX(-1)"></div>
+          <p>Rafaela é filha de Regina e Geraldo. Amiguinha de Sta. Terezinha 🌹, ela cresceu em Campo Grande, em
+            Cariacica/ES, e mora no Centro
+            de Vitória há quase 2 anos. Ela é engenheira civil (UFES) e também formada em matemática (UniCSul),
+            e pós-graduada (FAESA e FAVENI). Depois de passar alguns anos construindo shopping centers na
+            Grande Vitória, se encontrou
+            na educação e se tornou professora da rede de Vila Velha. Ela, que não era muito chegada a animais,
+            é mãe bichológica da Pérola e da Rubi, duas cadelinhas que ela vive grudada e não consegue se
+            imaginar vivendo sem! Ela é a miss simpatia do casal, iluminando todo ambiente que entra com sua
+            alegria cativante! </p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-img" style="background-image: url(assets/img/alberson.jpg);"></div>
+          <p>Alberson é filho de (outra!) Regina e Aldo. Ele cresceu em Coqueiral de Itaparica, em Vila Velha/ES, mas
+            mora no
+            Centro de Vitória há 10 anos. Ele é formado em economia (UFES) e matemática (IFES), mestre em economia
+            (UFES) e doutorando em economia (UFES). Trabalha há 15 anos no Banestes e gosta de tudo um pouco:
+            música, surf, fotografia, programação, história e seja lá o que parecer interessante no momento!
+          </p>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-img" style="background-image: url(assets/img/primeiro_encontro.jpg);"></div>
+          <p>Eles se conheceram no dia desta foto (que o Alberson pediu para tirarem 👀). Rafaela achou ele
+            "emocionado", mas, no final das contas, ele já tinha percebido que eles eram perfeitos um para o
+            outro! Juntos, eles são imbatíveis! Se completam, se apoiam e se amam. Rafaela com seu coração
+            enorme e muita agitação, e ele com a tranquilidade e a paciência que ela precisa.
+          </p>
+        </div>
+      </div>
+
+
+
+      <div class="quote reveal">
+        <h1>“E todas as horas que o tempo tem pra me conceder, são tuas até morrer”.</h1>
+        <div class="author text">Djavan - Um Amor Puro</div>
+      </div>
+
+
+      <div class="hands" id="parallax1"></div>
+
+
+      <div id="rsvp">
+        <h2 class="reveal">Confirme sua presença</h2>
+        <div class="rsvp-container reveal">
+          <div class="rsvp-item">
+            <h3>Importante!</h3>
+            <div class="text">Confirme a presença de<br>todas as pessoas, uma por vez!</div>
+          </div>
+          <div class="rsvp-item">
+            <form action="https://formspree.io/f/mqakkebd" method="POST">
+              <label for="name">Nome:</label>
+              <input type="text" id="name" name="name" required>
+
+              <label for="phone">Telefone:</label>
+              <input type="tel" id="phone" name="phone" required>
+
+              <label for="attendance">Vai comparecer?</label>
+              <select id="attendance" name="attendance" required>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+              </select>
+
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="gifts">
+        <div class="gifts-pages">
+          <div class="gifts-container reveal">
+            <h3>Presentes</h3>
+            <div class="text">
+              Aqui você poderá encontrar nossa lista de presentes e cotas para lua de mel.
+              Obrigado por nos ajudar a construir nossa nova vida juntos!
+            </div>
+            <a href="gifts.html">
+              <button class="huge-btn text">Lista de presentes</button>
+            </a>
+          </div>
+          <div class="gifts-container reveal">
+            <h3>Prendas</h3>
+            <div class="text">
+              Você paga e os noivos fazem!
+              Escolha uma prenda e veja o que os noivos farão para você na festa!
+            </div>
+            <a href="prendas.html">
+              <button class="huge-btn text">Lista de prendas</button>
+            </a>
+          </div>
+        </div>
+        <div class="gifts-img gifts-img-lg" id="parallax2"></div>
+      </div>
+      <div class="gifts-img gifts-img-sm" id="parallax3"></div>
+
+
+      <div class="parting-message reveal">
+        <h1>Te vemos na nossa festa!</h1>
+        <button class="huge-btn" onclick="document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });">
+          Confirme sua presença
+        </button>
+      </div>
+
+
+      <footer>
+        <h2>Surgiu alguma dúvida?</h2>
+        <p>Fale com nossa cerimonialista</p>
+        <p>Jéssica Scota: (27) 99828-8443</p>
+        <br>
+        <div class="text">© 2024 Alberson e Rafaela. Feito por <a href="https://github.com/albersonmiranda"
+            class="text">@albersonmiranda</a>.</div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
