@@ -109,6 +109,8 @@ nav {
   height: 3vh;
   width: 100%;
   margin-bottom: 20vh;
+  position: relative;
+  z-index: 100;
 }
 
 label.logo {
