@@ -82,7 +82,7 @@ function addBuyButtonListeners() {
       console.log('Valor do item:', valor);
 
       const formatPrice = (price) => {
-        return parseFloat(price.replace(/[R$\s.,]/g, ''));
+        return parseFloat(price.replace(/[R$\s,]/g, ''));
       };
 
       const normalizeDescription = (text) => {
