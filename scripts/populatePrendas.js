@@ -21,7 +21,15 @@ async function populatePrendas() {
   ];
 
   try {
-    // Iterando sobre os presentes para inserção
+    // Truncando tabela e reconstruindo a lista de prendas
+    await client.query(fql`Collection.byName("prendas")!.delete()`);
+    console.log('Tabela de prendas truncada.');
+
+    // Criando tabela "prendas"
+    await client.query(fql`Collection.create({ name: "prendas" })`);
+    console.log('Tabela de prendas criada.');
+
+    // Iterando sobre os prendas para inserção
     for (const prenda of prendas) {
       // Construindo a consulta para criar um novo presente
       const documentQuery = fql`
