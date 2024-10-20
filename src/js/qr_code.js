@@ -4,24 +4,6 @@ import { QrCodePix } from 'qrcode-pix';
 let isGiftsPage = false;
 let isPrendasPage = false;
 
-// Função para confirmar pagamento e atualizar o status do item visualmente
-function confirmPayment() {
-  console.log('confirmPayment called');
-  const activeItem = document.querySelector('.gift-item.active'); // Busca o item de presente ativo
-
-  if (activeItem) {
-    activeItem.style.backgroundColor = '#d3d3d3'; // Muda o fundo para cinza
-    const buyButton = activeItem.querySelector('.buy-button');
-    buyButton.textContent = 'Comprado'; // Muda o texto para "Comprado"
-    buyButton.disabled = true; // Desativa o botão
-  }
-
-  const qrCodeModal = document.getElementById('qrCodeModal');
-  if (qrCodeModal) {
-    qrCodeModal.style.display = 'none'; // Fecha o modal
-  }
-}
-
 // Função genérica para buscar e exibir itens (gifts ou prendas)
 async function fetchItems(endpoint, containerId) {
   try {
@@ -163,6 +145,24 @@ function addBuyButtonListeners() {
       }
     });
   });
+}
+
+// Função para confirmar pagamento e atualizar o status do item visualmente
+function confirmPayment() {
+  console.log('confirmPayment called');
+  const activeItem = document.querySelector('.gift-item.active'); // Busca o item de presente ativo
+
+  if (activeItem) {
+    activeItem.style.backgroundColor = '#d3d3d3'; // Muda o fundo para cinza
+    const buyButton = activeItem.querySelector('.buy-button');
+    buyButton.textContent = 'Comprado'; // Muda o texto para "Comprado"
+    buyButton.disabled = true; // Desativa o botão
+  }
+
+  const qrCodeModal = document.getElementById('qrCodeModal');
+  if (qrCodeModal) {
+    qrCodeModal.style.display = 'none'; // Fecha o modal
+  }
 }
 
 // Função para atualizar o status do item no FaunaDB
