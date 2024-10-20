@@ -1,0 +1,12 @@
+[build]
+  publish = "dist" # Diretório onde ficam os arquivos HTML, CSS, JS e assets.
+  functions = "netlify/functions" # Diretório onde estão as funções serverless.
+
+[dev]
+  publish = "dist" # Diretório que será servido no desenvolvimento.
+  targetPort = 8888 # Porta padrão para sites estáticos no Netlify Dev.
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
