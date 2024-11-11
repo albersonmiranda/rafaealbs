@@ -92,7 +92,7 @@ function addBuyButtonListeners() {
 
       const pixParams = {
         version: '01',
-        key: '27999343038',
+        key: '+5527999343038',
         name: userName,
         city: 'Vitoria',
         transactionId: generateTransactionId(),
