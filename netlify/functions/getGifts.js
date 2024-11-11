@@ -9,7 +9,7 @@ const client = new Client({
 exports.handler = async (event, context) => {
   try {
     // Consulta para obter todos os documentos da coleção 'gifts'
-    const query = fql`gifts.all()`;
+    const query = fql`gifts.all().pageSize(50)`;
 
     const result = await client.query(query);
 
