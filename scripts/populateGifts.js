@@ -11,6 +11,20 @@ const client = new Client({
 async function populateGifts() {
   const gifts = [
     {
+      name: 'Café chique',
+      description: 'Um café chique pra gente te convidar pra tomar',
+      price: 119.00,
+      imageUrl: 'https://fsbm.com.br/cdn/shop/files/cafe-jujuba-250g-moka-moka-clube-matriz-famiglie-sirna-battistella-mercato-727859.jpg?v=1730173488',
+      status: false,
+    },
+    {
+      name: 'Uberson',
+      description: 'Uber pra lua de mel',
+      price: 200.00,
+      imageUrl: 'https://olhardigital.com.br/wp-content/uploads/2023/07/uber-e1709212622153.jpg',
+      status: false,
+    },
+    {
       name: 'Lava Louças',
       description: 'Lava Louças para o Alberson parar de sofrer',
       price: 2899.90,
@@ -22,6 +36,27 @@ async function populateGifts() {
       description: 'Um boneco Melocoton pra Rafaela',
       price: 349.90,
       imageUrl: 'https://photos.enjoei.com.br/boneco-melocoton-73354805/800x800/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xMDUzMjc1My8zY2MwYTVmZjJiNjk5MDk0YTlkMmZkNzUyMTk3Zjk5Yy5qcGc',
+      status: false
+    },
+    {
+      name: 'Jardinagem',
+      description: 'Curso de jardinagem pro noivo parar de matar as plantas',
+      price: 149.90,
+      imageUrl: 'https://media.istockphoto.com/id/534553750/pt/foto/desbotado-planta-de-morango.jpg?s=612x612&w=0&k=20&c=UMzQsAF2Id0_4oX7tRmkxJsfcIY_l1lAQ0kI0367-74=',
+      status: false
+    },
+    {
+      name: 'Aviao50',
+      description: 'Aviãozinho de R$ 50 do Sílvio Santos',
+      price: 50.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zi0H5UOPjMXtSxaOG5PpkoMVDc4WqT26KQ&s',
+      status: false
+    },
+    {
+      name: 'Aviao100',
+      description: 'Aviãozinho de R$ 100 do Sílvio Santos',
+      price: 100.00,
+      imageUrl: 'https://portalemoff.com.br/wp-content/uploads/2024/08/Saiba-quem-fazia-os-famosos-avioezinhos-de-dinheiro-de-Silvio-Santos.jpg',
       status: false
     },
     {
@@ -89,7 +124,7 @@ async function populateGifts() {
     },
     {
       name: 'Xbox Series X',
-      description: 'Pra gente jogar juntos',
+      description: 'Indireta pra Rafaela',
       price: 4690.00,
       imageUrl: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-_7nZTfttEBhSg-ex9_loOXdJWfB8EhoLHh9zcJBRyCUPkbzf_AeSCRfP0QrwA0Va3RVYPDlhc2Dlk56b3csJmcfJHjm9TajuKuSvfnCOUe8A_75_hpCsnH-pPCkojjD9zwGW9Lw&usqp=CAc',
       status: false
@@ -113,7 +148,7 @@ async function populateGifts() {
       description: 'Pro banho semanal de Rafaela',
       price: 99.90,
       imageUrl: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSYLz3ZaIvogf9d861gHV_YF3akPMhCjk5DiDYACMJRsSQgSBC9BhrB4qU2OPZTsNIQ_G2crnwTa0A-bKXhepN8TKuutZT6qL27n9ajMyeR&usqp=CAc',
-      status: false
+      status: true
     },
     {
       name: 'Máquina de Lavar',
