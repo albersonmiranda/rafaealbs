@@ -14,7 +14,7 @@ async function populateGifts() {
       name: 'Café chique',
       description: 'Um café chique pra gente te convidar pra tomar',
       price: 119.00,
-      imageUrl: 'https://fsbm.com.br/cdn/shop/files/cafe-jujuba-250g-moka-moka-clube-matriz-famiglie-sirna-battistella-mercato-727859.jpg?v=1730173488',
+      imageUrl: 'https://www.mokaclube.com.br/wp-content/uploads/2022/01/shiraz-barrel-aged-250g-foto1.jpg',
       status: false,
     },
     {
@@ -22,7 +22,7 @@ async function populateGifts() {
       description: 'Uber pra lua de mel',
       price: 200.00,
       imageUrl: 'https://olhardigital.com.br/wp-content/uploads/2023/07/uber-e1709212622153.jpg',
-      status: false,
+      status: true,
     },
     {
       name: 'Lava Louças',
@@ -134,7 +134,7 @@ async function populateGifts() {
       description: 'Pra gente te convidar pra jantar',
       price: 150.00,
       imageUrl: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSAdGeujVqKrlpHkiF0sjKn4bPdEsr9pzTL8iy7z_khlqEvoLEWSc2NroZh324At48ln4rIfyh4EE2ThIktT28xH1L6D15esOts3_iGXUWjqJO0AzHS2hLChIGrbnmwjOdgtmhm0HxlCg&usqp=CAc',
-      status: false
+      status: true
     },
     {
       name: 'Jogo de Panelas',
