@@ -67,7 +67,7 @@ async function populateGifts() {
       status: false,
     },
     {
-      name: 'Aparelho de Jantar (30 pçs)',
+      name: 'Jantar 30pcs',
       description: 'Tem que repor porque o alberson quebra tudo lavando',
       price: 331.19,
       imageUrl: 'https://lh3.googleusercontent.com/LosAZ6DuzCNoGFgUXrOml3roRR-o4ladIIeSYiQk_xQe1ioiMC14alUY7LGVciFYTVmNtQL7kDUJxZLenBYV_XK0yobosSRUpJkIsKjIR4tK=s0',
@@ -81,28 +81,28 @@ async function populateGifts() {
       status: false
     },
     {
-      name: 'Cota de Lua de Mel 1',
+      name: 'Lua de Mel 1',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 300.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
       status: false,
     },
     {
-      name: 'Cota de Lua de Mel 2',
+      name: 'Lua de Mel 2',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 500.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
       status: false,
     },
     {
-      name: 'Cota de Lua de Mel 3',
+      name: 'Lua de Mel 3',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 500.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
       status: false,
     },
     {
-      name: 'Cota de Lua de Mel 4',
+      name: 'Lua de Mel 4',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 1000.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
@@ -123,14 +123,14 @@ async function populateGifts() {
       status: false
     },
     {
-      name: 'Xbox Series X',
+      name: 'Xbox',
       description: 'Indireta pra Rafaela',
       price: 4690.00,
       imageUrl: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-_7nZTfttEBhSg-ex9_loOXdJWfB8EhoLHh9zcJBRyCUPkbzf_AeSCRfP0QrwA0Va3RVYPDlhc2Dlk56b3csJmcfJHjm9TajuKuSvfnCOUe8A_75_hpCsnH-pPCkojjD9zwGW9Lw&usqp=CAc',
       status: false
     },
     {
-      name: 'Moedor de sal e pimenta',
+      name: 'Moedor',
       description: 'Pra gente te convidar pra jantar',
       price: 150.00,
       imageUrl: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSAdGeujVqKrlpHkiF0sjKn4bPdEsr9pzTL8iy7z_khlqEvoLEWSc2NroZh324At48ln4rIfyh4EE2ThIktT28xH1L6D15esOts3_iGXUWjqJO0AzHS2hLChIGrbnmwjOdgtmhm0HxlCg&usqp=CAc',
