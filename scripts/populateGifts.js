@@ -169,7 +169,7 @@ async function populateGifts() {
       description: 'Queimei o nosso fazendo bobó de camarão',
       price: 199.90,
       imageUrl: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRFl-_Fhp9G8uae5raXFpRNwssrdpwG-ns14VrRhTGC5DYqdxl73sxLBg_EEPCBSSgi-BvXW1QT56y2YJ18p97k-BrtsV6QuTzozTnwqnf_CfUfBnhlLFohJMZaRp5PF16SX9XlzFkJ&usqp=CAc',
-      status: false
+      status: true
     },
     {
       name: 'Pipoqueira',

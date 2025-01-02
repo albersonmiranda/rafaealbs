@@ -15,7 +15,7 @@ async function populatePrendas() {
       description: 'A noiva vai correr na festa que nem o Naruto kkk',
       price: 350,
       imageUrl: 'assets/img/naruto.jpg',
-      status: false,
+      status: true,
     },
     {
       name: 'Tequila',
@@ -50,7 +50,7 @@ async function populatePrendas() {
       description: 'O noivo vai subir no palco dançar NSYNC (pfvr n compre)',
       price: 500,
       imageUrl: 'https://ew.com/thmb/mdTtLghMg2K2PDMzP-Kg1L5jkOc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/nsync-121323-225d27ef451c496da433e40d310f3664.jpg',
-      status: false,
+      status: true,
     }
   ];
 
