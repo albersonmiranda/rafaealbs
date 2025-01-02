@@ -79,6 +79,8 @@ function addBuyButtonListeners() {
         return;
       }
 
+      const itemNameId = normalizeDescription(itemName).replace(/\s+/g, '').slice(0, 11);
+
       const generateTransactionId = () => {
         const now = new Date();
         const year = now.getFullYear();
@@ -87,7 +89,7 @@ function addBuyButtonListeners() {
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
-        return `${itemName}${year}${month}${day}`;
+        return `${itemNameId}${year}${month}${day}${hours}${minutes}${seconds}`;
       };
 
       const pixParams = {
