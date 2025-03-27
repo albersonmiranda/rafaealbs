@@ -1,66 +1,35 @@
-require('dotenv').config(); // Carregar variáveis de ambiente
+require('dotenv').config(); // Load environment variables
+const { MongoClient, ObjectId } = require('mongodb'); // Import MongoDB client
 
-const { Client, fql, FaunaError } = require('fauna'); // Importando o pacote fauna
-
-const client = new Client({
-  secret: process.env.FAUNA_SECRET, // Usando sua chave secreta
-});
+const client = new MongoClient(process.env.MONGODB_URI);
 
 exports.handler = async (event, context) => {
   try {
-    // Consulta para obter todos os documentos da coleção 'gifts'
-    const query = fql`gifts.all().pageSize(50)`;
+    await client.connect();
+    const database = client.db('Cluster0'); // Replace with your database name
+    const giftsCollection = database.collection('gifts');
 
-    const result = await client.query(query);
+    const documents = await giftsCollection.find({}).toArray();
+    
+    // Convert MongoDB _id to string id for frontend compatibility
+    const formattedDocuments = documents.map(doc => ({
+      ...doc,
+      id: doc._id.toString() // Add string id field for frontend
+    }));
 
-    console.log('Resultado da consulta:', result); // Logando o resultado
-
-    // Verificando se a resposta contém a propriedade 'data'
-    if (!result || !result.data || !Array.isArray(result.data.data)) {
-      console.error('Resposta inesperada: resultado não contém um array', result);
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: 'Resposta inesperada' }),
-      };
-    }
-
-    // Extraindo os documentos da propriedade data
-    const documents = result.data.data.flat(); // Usando flat() para garantir que é um array
-
-    // Mapeando os documentos para o formato desejado
-    const gifts = documents.map(item => {
-      // Verificando se o item contém as propriedades diretamente
-      if (!item || typeof item.name === 'undefined') {
-        console.warn('Item não possui dados:', item); // Logando itens sem dados
-        return null; // Retornando null para itens inválidos
-      }
-
-      return {
-        id: item.id,
-        ts: item.ts,
-        name: item.name,
-        description: item.description,
-        price: item.price,
-        imageUrl: item.imageUrl,
-        status: item.status,
-      };
-    }).filter(Boolean); // Removendo itens nulos
+    console.log('Query result:', formattedDocuments);
 
     return {
       statusCode: 200,
-      body: JSON.stringify(gifts), // Result já está formatado
+      body: JSON.stringify(formattedDocuments),
     };
   } catch (error) {
-    console.error('Erro ao buscar presentes:', error); // Logando o erro
-    if (error instanceof FaunaError) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: error.message }),
-      };
-    }
+    console.error('Error fetching gifts:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Erro desconhecido' }),
+      body: JSON.stringify({ error: 'Internal Server Error' }),
     };
+  } finally {
+    await client.close();
   }
 };

@@ -1,12 +1,9 @@
-const { Client, fql, FaunaError } = require('fauna'); // Importando o pacote fauna
-const dotenv = require('dotenv'); // Para carregar variáveis de ambiente
+const { MongoClient, ObjectId } = require('mongodb');
+const dotenv = require('dotenv');
 
-dotenv.config(); // Carregando variáveis de ambiente
+dotenv.config();
 
-// Criando um cliente do FaunaDB
-const client = new Client({
-  secret: process.env.FAUNA_SECRET, // Usando sua chave secreta
-});
+const client = new MongoClient(process.env.MONGODB_URI);
 
 async function populatePrendas() {
   const prendas = [
@@ -55,49 +52,19 @@ async function populatePrendas() {
   ];
 
   try {
-    // Truncando tabela e reconstruindo a lista de prendas
-    await client.query(fql`Collection.byName("prendas")!.delete()`);
-    console.log('Tabela de prendas truncada.');
-
-    // Criando tabela "prendas"
-    await client.query(fql`Collection.create({ name: "prendas" })`);
-    console.log('Tabela de prendas criada.');
-
-    // Iterando sobre os prendas para inserção
-    for (const prenda of prendas) {
-      // Construindo a consulta para criar um novo presente
-      const documentQuery = fql`
-        prendas.create({
-          name: ${prenda.name},
-          description: ${prenda.description},
-          price: ${prenda.price},
-          imageUrl: ${prenda.imageUrl},
-          status: ${prenda.status}
-        }) {
-          id,
-          ts,
-          name,
-          description,
-          price,
-          imageUrl,
-          status
-        }
-      `;
-
-      // Executando a consulta
-      const response = await client.query(documentQuery);
-      console.log('Item adicionado:', response);
-    }
-    console.log('Todos os itens foram adicionados ao FaunaDB.');
+    await client.connect();
+    const database = client.db('Cluster0'); // Replace with your database name
+    const prendasCollection = database.collection('prendas');
+    
+    // Clear existing prendas before adding new ones to avoid duplicates
+    await prendasCollection.deleteMany({});
+    
+    const result = await prendasCollection.insertMany(prendas);
+    console.log('Prendas added:', result.insertedCount);
   } catch (error) {
-    if (error instanceof FaunaError) {
-      console.log('Erro ao adicionar itens:', error);
-    } else {
-      console.log('Erro desconhecido:', error);
-    }
+    console.error('Error populating prendas:', error);
   } finally {
-    // Fechar o cliente após a operação
-    client.close();
+    await client.close();
   }
 }
 

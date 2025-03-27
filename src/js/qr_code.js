@@ -167,13 +167,13 @@ function confirmPayment() {
   }
 }
 
-// Função para atualizar o status do item no FaunaDB
+// Função para atualizar o status do item no MongoDB
 async function updateItemStatus(id, status, collection) {
-  console.log(`Atualizando status do item: id = ${id}, status = ${status}, collection = ${collection}`);
+  console.log(`Updating item status: id = ${id}, status = ${status}, collection = ${collection}`);
   try {
     const response = await fetch('/.netlify/functions/updateItemStatus', {
       method: 'POST',
-      body: JSON.stringify({ id, status, collection }), // Incluindo a coleção no corpo da requisição
+      body: JSON.stringify({ id, status, collection }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -181,16 +181,16 @@ async function updateItemStatus(id, status, collection) {
       throw new Error('Network response was not ok');
     }
 
-    const data = await response.json(); // Verifica a resposta
-    console.log('Resposta da atualização:', data);
+    const data = await response.json();
+    console.log('Update response:', data);
 
     if (data.error) {
-      console.error('Erro do servidor:', data.error);
+      console.error('Server error:', data.error);
     } else {
-      console.log('Status do item atualizado');
+      console.log('Item status updated');
     }
   } catch (error) {
-    console.error('Erro ao atualizar status do item:', error);
+    console.error('Error updating item status:', error);
   }
 }
 

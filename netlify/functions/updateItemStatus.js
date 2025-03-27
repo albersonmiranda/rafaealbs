@@ -1,29 +1,12 @@
-require('dotenv').config(); // Carregar variáveis de ambiente
+require('dotenv').config(); // Load environment variables
+const { MongoClient, ObjectId } = require('mongodb'); // Import MongoDB client with ObjectId
 
-const { Client, fql, FaunaError } = require('fauna'); // Importando o pacote fauna
-
-const client = new Client({
-  secret: process.env.FAUNA_SECRET, // Usando sua chave secreta
-});
+const client = new MongoClient(process.env.MONGODB_URI);
 
 exports.handler = async (event, context) => {
-  const { id, status, collection } = JSON.parse(event.body); // Extraindo id, status e coleção do corpo da requisição
+  const { id, status, collection } = JSON.parse(event.body);
 
-  // Verificando se o ID, coleção e status foram fornecidos
-  if (!collection || !id || typeof status !== 'boolean') {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'Collection, ID, and valid boolean status are required' }),
-    };
-  }
-
-  // Definindo a coleção correta com base no nome passado
-  let collectionQuery;
-  if (collection === 'gifts') {
-    collectionQuery = fql`gifts.firstWhere(.id == ${id})?.update({ status: ${status} })`;
-  } else if (collection === 'prendas') {
-    collectionQuery = fql`prendas.firstWhere(.id == ${id})?.update({ status: ${status} })`;
-  } else {
+  if (!['prendas', 'gifts'].includes(collection)) {
     return {
       statusCode: 400,
       body: JSON.stringify({ error: 'Invalid collection name' }),
@@ -31,24 +14,27 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Executando a consulta para a coleção selecionada
-    const result = await client.query(collectionQuery);
+    await client.connect();
+    const database = client.db('Cluster0'); // Replace with your database name
+    const targetCollection = database.collection(collection);
+
+    // Use ObjectId when updating by _id
+    const result = await targetCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: { status } }
+    );
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `${collection} status updated`, data: result }),
+      body: JSON.stringify({ message: `${collection} status updated`, result }),
     };
   } catch (error) {
-    // Tratamento de erros de FaunaDB
-    if (error instanceof FaunaError) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: error.message }),
-      };
-    }
+    console.error('Error updating item status:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Erro desconhecido' }),
+      body: JSON.stringify({ error: 'Internal Server Error' }),
     };
+  } finally {
+    await client.close();
   }
 };
