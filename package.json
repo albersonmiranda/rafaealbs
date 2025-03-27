@@ -3,6 +3,7 @@
     "buffer": "^6.0.3",
     "dotenv": "^16.4.5",
     "fauna": "^2.2.0",
+    "mongodb": "^5.7.0",
     "netlify": "^13.1.21",
     "qrcode-pix": "5.0.0"
   },

@@ -1,62 +1,35 @@
-require('dotenv').config(); // Carregar variáveis de ambiente
+require('dotenv').config(); // Load environment variables
+const { MongoClient, ObjectId } = require('mongodb'); // Import MongoDB client
 
-const { Client, fql, FaunaError } = require('fauna'); // Importando o pacote fauna
-
-const client = new Client({
-  secret: process.env.FAUNA_SECRET, // Usando sua chave secreta
-});
+const client = new MongoClient(process.env.MONGODB_URI);
 
 exports.handler = async (event, context) => {
   try {
-    // Consulta para obter todos os documentos da coleção 'prendas'
-    const query = fql`prendas.all()`;
+    await client.connect();
+    const database = client.db('Cluster0'); // Replace with your database name
+    const prendasCollection = database.collection('prendas');
 
-    const result = await client.query(query);
+    const documents = await prendasCollection.find({}).toArray();
+    
+    // Convert MongoDB _id to string id for frontend compatibility
+    const formattedDocuments = documents.map(doc => ({
+      ...doc,
+      id: doc._id.toString() // Add string id field for frontend
+    }));
 
-    console.log('Resultado da consulta:', result);
-
-    if (!result || !result.data || !Array.isArray(result.data.data)) {
-      console.error('Resposta inesperada: resultado não contém um array', result);
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: 'Resposta inesperada' }),
-      };
-    }
-
-    const documents = result.data.data.flat();
-
-    const prendas = documents.map(item => {
-      if (!item || typeof item.name === 'undefined') {
-        console.warn('Item não possui dados:', item);
-        return null;
-      }
-
-      return {
-        id: item.id,
-        ts: item.ts,
-        name: item.name,
-        description: item.description,
-        price: item.price,
-        imageUrl: item.imageUrl,
-        status: item.status,
-      };
-    }).filter(Boolean);
+    console.log('Query result:', formattedDocuments);
 
     return {
       statusCode: 200,
-      body: JSON.stringify(prendas),
+      body: JSON.stringify(formattedDocuments),
     };
   } catch (error) {
-    console.error('Erro ao buscar prendas:', error);
-    if (error instanceof FaunaError) {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: error.message }),
-      };
-    }
+    console.error('Error fetching prendas:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Erro desconhecido' }),
+      body: JSON.stringify({ error: 'Internal Server Error' }),
     };
+  } finally {
+    await client.close();
   }
 };

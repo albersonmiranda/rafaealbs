@@ -1,12 +1,9 @@
-const { Client, fql, FaunaError } = require('fauna'); // Importando o pacote fauna
-const dotenv = require('dotenv'); // Para carregar variáveis de ambiente
+const { MongoClient} = require('mongodb');
+const dotenv = require('dotenv');
 
-dotenv.config(); // Carregando variáveis de ambiente
+dotenv.config();
 
-// Criando um cliente do FaunaDB
-const client = new Client({
-  secret: process.env.FAUNA_SECRET, // Usando sua chave secreta
-});
+const client = new MongoClient(process.env.MONGODB_URI);
 
 async function populateGifts() {
   const gifts = [
@@ -202,48 +199,19 @@ async function populateGifts() {
   ];
 
   try {
-    // Truncando tabela e reconstruindo a lista de presentes
-    await client.query(fql`Collection.byName("gifts")!.delete()`);
-    console.log('Tabela de presentes truncada.');
-
-    // Criando tabela "gifts"
-    await client.query(fql`Collection.create({ name: "gifts" })`);
-    console.log('Tabela de presentes criada.');
-
-    // Iterando sobre os presentes para inserção
-    for (const gift of gifts) {
-      const documentQuery = fql`
-        gifts.create({
-          name: ${gift.name},
-          description: ${gift.description},
-          price: ${gift.price},
-          imageUrl: ${gift.imageUrl},
-          status: ${gift.status}
-        }) {
-          id,
-          ts,
-          name,
-          description,
-          price,
-          imageUrl,
-          status
-        }
-      `;
-
-      // Executando a consulta
-      const response = await client.query(documentQuery);
-      console.log('Item adicionado:', response);
-    }
-    console.log('Todos os itens foram adicionados ao FaunaDB.');
+    await client.connect();
+    const database = client.db('Cluster0'); // Replace with your database name
+    const giftsCollection = database.collection('gifts');
+    
+    // Clear existing gifts before adding new ones to avoid duplicates
+    await giftsCollection.deleteMany({});
+    
+    const result = await giftsCollection.insertMany(gifts);
+    console.log('Gifts added:', result.insertedCount);
   } catch (error) {
-    if (error instanceof FaunaError) {
-      console.log('Erro ao adicionar itens:', error);
-    } else {
-      console.log('Erro desconhecido:', error);
-    }
+    console.error('Error populating gifts:', error);
   } finally {
-    // Fechar o cliente após a operação
-    client.close();
+    await client.close();
   }
 }
 
