@@ -9,7 +9,7 @@
   --h2-size: 2.1rem;
   --h3-size: 1.7rem;
   --text-size: 1.3rem;
-  --horizontal-margin-spacing: 3rem;
+  --horizontal-margin-spacing: 1rem;
   --grey-color-light: rgba(232, 230, 230, .6);
   --grey-color: rgba(232, 230, 230, 1);
 }
@@ -49,7 +49,7 @@ h1 {
 
 h2 {
   font-size: var(--h2-size);
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h3 {
@@ -221,9 +221,9 @@ a:hover {
 }
 
 .home-img {
-  background-image: url(../assets/img/home.jpg);
+  background-image: url(../assets/img/banner.png);
   background-size: cover;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
 }
 
@@ -237,8 +237,7 @@ a:hover {
 #home-img-lg {
   display: block;
   height: 110vh;
-  width: 50vw;
-  background-position-x: -100px;
+  width: 100%;
 }
 
 @media (max-width:1000px) {
@@ -254,9 +253,10 @@ a:hover {
 
   #home-img-lg {
     display: block;
+    background-image: url(../assets/img/banner_media.png);
+    background-position: top center;
     height: 75vh;
-    width: 100vw;
-    background-position-x: -50px;
+    width: 100%;
   }
 }
 
@@ -378,9 +378,7 @@ a:hover {
 .gallery-item {
   display: flex;
   flex-direction: column;
-  /* Coloca imagem e texto em coluna */
   align-items: center;
-  /* Centraliza o texto em relação à imagem */
   margin: 10px;
 }
 
@@ -393,13 +391,9 @@ a:hover {
 
 .gallery-item p {
   margin-top: 10px;
-  /* Espaçamento entre a imagem e o texto */
   text-align: justify;
-  /* Centraliza o texto */
   font-size: 16px;
-  /* Ajuste o tamanho da fonte conforme necessário */
   color: #333;
-  /* Cor do texto */
 }
 
 @media (max-width:1000px) {
@@ -662,7 +656,7 @@ a:hover {
 
 /* <===================PARTING MESSAGE===================> */
 .parting-message h1 {
-  margin-top: 10vh;
+  margin: 10vh 1vh;
   text-align: center;
 }
 

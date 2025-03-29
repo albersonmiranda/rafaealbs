@@ -23,17 +23,17 @@ function importAll(r) {
 const images = importAll(require.context('../assets', true, /\.(png|jpe?g|svg|ico)$/));
 
 // Função para revelar elementos ao rolar a página
-const parallax = document.getElementById("home-img-lg");
+//const parallax = document.getElementById("home-img-lg");
 const parallax1 = document.getElementById("parallax1");
 const parallax2 = document.getElementById("parallax2");
 const parallax3 = document.getElementById("parallax3");
 
-if (parallax) {
-  window.addEventListener("scroll", function () {
-    let offset = window.pageYOffset;
-    parallax.style.backgroundPositionX = offset * (-0.08) - 100 + "px";
-  });
-}
+//if (parallax) {
+//window.addEventListener("scroll", function () {
+//  let offset = window.pageYOffset;
+//    parallax.style.backgroundPositionX = offset * (-0.08) - 100 + "px";
+//  });
+//}
 
 if (parallax1) {
   window.addEventListener("scroll", function () {
