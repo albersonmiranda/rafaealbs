@@ -4,7 +4,6 @@ const path = require('path');
 const { publicPath } = require('webpack/lib/RuntimeGlobals');
 
 module.exports = {
-  watch: true,
   entry: './src/js/index.js',
   output: {
     filename: 'bundle.js',
