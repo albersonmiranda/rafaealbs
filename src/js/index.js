@@ -54,7 +54,7 @@ if (parallax2) {
 if (parallax3) {
   window.addEventListener("scroll", function () {
     let offset = window.pageYOffset;
-    offset -= 6500;
+    offset -= 6000;
     parallax3.style.backgroundPositionX = offset * (0.09) + "px";
   });
 }
