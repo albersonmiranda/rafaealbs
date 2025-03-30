@@ -229,7 +229,7 @@ a:hover {
 
 .home-img-sm {
   display: none;
-  width: 100%;
+  width: 105%;
   margin: 20px 0 0 0;
   height: 50vh;
 }
@@ -237,7 +237,11 @@ a:hover {
 #home-img-lg {
   display: block;
   height: 110vh;
-  width: 100%;
+  width: 105%;
+}
+
+.home.hz-margin {
+  padding: 0;
 }
 
 @media (max-width:1000px) {
@@ -248,7 +252,7 @@ a:hover {
 
   .home-img-sm {
     display: none;
-    width: 100vw;
+    width: 105%;
   }
 
   #home-img-lg {
@@ -256,7 +260,7 @@ a:hover {
     background-image: url(../assets/img/banner_media.png);
     background-position: top center;
     height: 75vh;
-    width: 100%;
+    width: 105%;
   }
 }
 

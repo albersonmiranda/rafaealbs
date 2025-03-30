@@ -31,7 +31,7 @@ const parallax3 = document.getElementById("parallax3");
 if (parallax) {
 window.addEventListener("scroll", function () {
   let offset = window.pageYOffset;
-  offset -= 100;
+  offset -= 0;
   parallax.style.backgroundPositionX = offset * (-0.02) + "px";
   });
 }
