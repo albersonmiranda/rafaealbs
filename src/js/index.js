@@ -29,9 +29,10 @@ const parallax2 = document.getElementById("parallax2");
 const parallax3 = document.getElementById("parallax3");
 
 if (parallax) {
-  window.addEventListener("scroll", function () {
-    let offset = window.pageYOffset;
-    parallax.style.backgroundPositionX = offset * (-0.08) - 100 + "px";
+window.addEventListener("scroll", function () {
+  let offset = window.pageYOffset;
+  offset -= 0;
+  parallax.style.backgroundPositionX = offset * (-0.02) + "px";
   });
 }
 
@@ -54,8 +55,8 @@ if (parallax2) {
 if (parallax3) {
   window.addEventListener("scroll", function () {
     let offset = window.pageYOffset;
-    offset -= 6500;
-    parallax3.style.backgroundPositionX = offset * (0.09) + "px";
+    offset -= 7000;
+    parallax3.style.backgroundPositionX = offset * (0.05) + "px";
   });
 }
 

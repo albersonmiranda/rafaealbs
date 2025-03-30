@@ -12,7 +12,7 @@ async function populateGifts() {
       description: 'Um café chique pra gente te convidar pra tomar',
       price: 119.00,
       imageUrl: 'https://www.mokaclube.com.br/wp-content/uploads/2022/01/shiraz-barrel-aged-250g-foto1.jpg',
-      status: false,
+      status: true,
     },
     {
       name: 'Uberson',
@@ -40,7 +40,7 @@ async function populateGifts() {
       description: 'Curso de jardinagem pro noivo parar de matar as plantas',
       price: 149.90,
       imageUrl: 'https://media.istockphoto.com/id/534553750/pt/foto/desbotado-planta-de-morango.jpg?s=612x612&w=0&k=20&c=UMzQsAF2Id0_4oX7tRmkxJsfcIY_l1lAQ0kI0367-74=',
-      status: false
+      status: true
     },
     {
       name: 'Aviao50',
@@ -89,17 +89,31 @@ async function populateGifts() {
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 500.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
-      status: false,
+      status: true,
     },
     {
       name: 'Lua de Mel 3',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 500.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
-      status: false,
+      status: true,
     },
     {
       name: 'Lua de Mel 4',
+      description: 'Ajudinha pra gente viajar e curtir a lua de mel',
+      price: 500.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
+      status: false,
+    },
+    {
+      name: 'Lua de Mel 5',
+      description: 'Ajudinha pra gente viajar e curtir a lua de mel',
+      price: 500.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
+      status: false,
+    },
+    {
+      name: 'Lua de Mel 6',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 1000.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
@@ -117,7 +131,7 @@ async function populateGifts() {
       description: 'Pra gente te convidar pra tomar um café',
       price: 199.90,
       imageUrl: 'https://electrolux.vtexassets.com/arquivos/ids/214556/Coffee_Machine_ECM30_FrontView_Electrolux_1000x1000_principal.jpg?v=637721920607430000',
-      status: false
+      status: true
     },
     {
       name: 'Xbox',
@@ -173,7 +187,7 @@ async function populateGifts() {
       description: 'Pra gente te convidar pra assistir um filme',
       price: 199.90,
       imageUrl: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR9_B7N6rSZ3-SUzC70_p-cGPQN3DhBw-jBEUNgnxqL-p5UImPYesE85lnN1IJnFREPfcnmg798MmzA-pbHmmuXv9wJuvhyotaO2vw_tz0kwHhBLa84aK-q6NQ-OnGnQ5QeTAUNS2w&usqp=CAc',
-      status: false
+      status: true
     },
     {
       name: 'Roupa de Cama',
