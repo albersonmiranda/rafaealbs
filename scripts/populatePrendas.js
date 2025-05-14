@@ -25,7 +25,7 @@ async function populatePrendas() {
       name: 'Pitty',
       description: 'A noiva vai subir no palco e cantar Pitty (socorro)',
       price: 500,
-      imageUrl: 'https://www.grupopetropolis.com.br/grpptrpls/wp-content/uploads/pitty-TNT-parceria03.jpg',
+      imageUrl: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSd4mhhDGdOsZWrcllR8TOJWPbI5spdX1mBo74-a_jKc5VqGS_IQxKeuxPk6ZxmDUbk3FoEuTXjDPn0yJffnlpSvw',
       status: false,
     },
     {

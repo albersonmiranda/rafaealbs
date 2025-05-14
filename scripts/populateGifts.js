@@ -11,7 +11,7 @@ async function populateGifts() {
       name: 'Café chique',
       description: 'Um café chique pra gente te convidar pra tomar',
       price: 119.00,
-      imageUrl: 'https://www.mokaclube.com.br/wp-content/uploads/2022/01/shiraz-barrel-aged-250g-foto1.jpg',
+      imageUrl: 'https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/481271ttP/anh-mo-ta.png',
       status: true,
     },
     {
@@ -33,7 +33,7 @@ async function populateGifts() {
       description: 'Um boneco Melocoton pra Rafaela',
       price: 349.90,
       imageUrl: 'https://photos.enjoei.com.br/boneco-melocoton-73354805/800x800/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xMDUzMjc1My8zY2MwYTVmZjJiNjk5MDk0YTlkMmZkNzUyMTk3Zjk5Yy5qcGc',
-      status: false
+      status: true
     },
     {
       name: 'Jardinagem',
@@ -47,14 +47,14 @@ async function populateGifts() {
       description: 'Aviãozinho de R$ 50 do Sílvio Santos',
       price: 50.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zi0H5UOPjMXtSxaOG5PpkoMVDc4WqT26KQ&s',
-      status: false
+      status: true
     },
     {
       name: 'Aviao100',
       description: 'Aviãozinho de R$ 100 do Sílvio Santos',
       price: 100.00,
-      imageUrl: 'https://portalemoff.com.br/wp-content/uploads/2024/08/Saiba-quem-fazia-os-famosos-avioezinhos-de-dinheiro-de-Silvio-Santos.jpg',
-      status: false
+      imageUrl: 'https://dcdn-us.mitiendanube.com/stores/004/408/810/products/1000033465-6c3579e530b904fb6317125170007416-1024-1024.jpg',
+      status: true
     },
     {
       name: 'Adega',
@@ -110,14 +110,14 @@ async function populateGifts() {
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 500.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
-      status: false,
+      status: true,
     },
     {
       name: 'Lua de Mel 6',
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 1000.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
-      status: false,
+      status: true,
     },
     {
       name: 'Box bipartido',
@@ -194,7 +194,7 @@ async function populateGifts() {
       description: 'Pro Alberson não roubar a coberta',
       price: 299.90,
       imageUrl: 'https://images.yampi.me/assets/stores/todecorando/uploads/images/kit-roupa-de-cama-7-pecas-queen-colorful-summer-soul-amarelo-663b6a6caffbe-medium.jpg',
-      status: false
+      status: true
     },
     {
       name: 'Cooktop',
@@ -208,7 +208,7 @@ async function populateGifts() {
       description: 'Vamos acabar usando só uma mesmo',
       price: 199.90,
       imageUrl: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQpnYoGsBCrNwaNrFsaz6tV9ymzIyo1cp94TdGTVdpP2ls4iX3FSqBO3nUTja5wS1HCqc9SUqMfLarYD0PYqV_G0sV0omElsDdOu9TuOO3VKVJkqTdaa1CJK-jkH4CPrrA9_WI1EyLUMw&usqp=CAc',
-      status: false
+      status: true
     },
   ];
 
