@@ -53,7 +53,7 @@ async function populatePrendas() {
       name: 'revelacao',
       description: 'É menino ou menina 💙🩷? Os noivos vão revelar!',
       price: 500,
-      imageUrl: 'assets/img/prendas/ultrassom.jpeg',
+      imageUrl: 'assets/img/ultrassom.jpeg',
       status: false,
     }
   ];
