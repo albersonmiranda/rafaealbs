@@ -48,6 +48,13 @@ async function populatePrendas() {
       price: 500,
       imageUrl: 'https://ew.com/thmb/mdTtLghMg2K2PDMzP-Kg1L5jkOc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/nsync-121323-225d27ef451c496da433e40d310f3664.jpg',
       status: true,
+    },
+    {
+      name: 'revelacao',
+      description: 'É menino ou menina 💙🩷? Os noivos vão revelar!',
+      price: 500,
+      imageUrl: 'assets/img/prendas/ultrassom.jpeg',
+      status: false,
     }
   ];
 
