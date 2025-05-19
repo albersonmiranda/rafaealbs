@@ -263,7 +263,7 @@ async function populateGifts() {
       name: 'Batedeira',
       description: 'CHEGA DE BOLO SOLADO',
       price: 250.00,
-      imageUrl: 'assets/img/batedeira.webp',
+      imageUrl: 'assets/img/batedeira.png',
       status: false
     },
   ];
