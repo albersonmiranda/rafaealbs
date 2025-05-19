@@ -36,10 +36,10 @@ async function populatePrendas() {
       status: false
     },
     {
-      name: 'Bananinha',
-      description: 'A noiva vai virar uma dose de bananinha',
+      name: 'Mimica',
+      description: 'Você diz e a noiva faz uma mímica para o noivo adivinhar',
       price: 250,
-      imageUrl: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRn7O58MXgySne7BZyaDbf9hOghN58dCcyc7XqgqRoUZiwGfx0yOhvZlIJRg9MRTU1qwHStkYWVZ6Exbo4IdOGnXyt6C5yJZL5BaluZ221v_Gg_HAGVE43yqojzJDz25l1ekdwEAZP77i0&usqp=CAc',
+      imageUrl: 'assets/img/mimica.jpg',
       status: false,
     },
     {
@@ -54,7 +54,7 @@ async function populatePrendas() {
       description: 'É menino ou menina 💙🩷? Os noivos vão revelar!',
       price: 500,
       imageUrl: 'assets/img/ultrassom.jpeg',
-      status: false,
+      status: true,
     }
   ];
 

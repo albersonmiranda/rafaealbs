@@ -68,7 +68,7 @@ async function populateGifts() {
       description: 'Tem que repor porque o alberson quebra tudo lavando',
       price: 331.19,
       imageUrl: 'https://lh3.googleusercontent.com/LosAZ6DuzCNoGFgUXrOml3roRR-o4ladIIeSYiQk_xQe1ioiMC14alUY7LGVciFYTVmNtQL7kDUJxZLenBYV_XK0yobosSRUpJkIsKjIR4tK=s0',
-      status: false
+      status: true
     },
     {
       name: 'Ar condicionado',
@@ -82,7 +82,7 @@ async function populateGifts() {
       description: 'Ajudinha pra gente viajar e curtir a lua de mel',
       price: 300.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
-      status: false,
+      status: true,
     },
     {
       name: 'Lua de Mel 2',
@@ -118,6 +118,34 @@ async function populateGifts() {
       price: 1000.00,
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
       status: true,
+    },
+    {
+      name: 'Lua de Mel 7',
+      description: 'Ajudinha pra gente viajar e curtir a lua de mel',
+      price: 350.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
+      status: false,
+    },
+    {
+      name: 'Lua de Mel 8',
+      description: 'Ajudinha pra gente viajar e curtir a lua de mel',
+      price: 300.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
+      status: false,
+    },
+    {
+      name: 'Lua de Mel 9',
+      description: 'Ajudinha pra gente viajar e curtir a lua de mel',
+      price: 1400.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
+      status: false,
+    },
+    {
+      name: 'Lua de Mel 10',
+      description: 'Ajudinha pra gente viajar e curtir a lua de mel',
+      price: 300.00,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcri8XO3e8tWM5Hav64e_3WwQzeURCze2RVg&s',
+      status: false,
     },
     {
       name: 'Box bipartido',
@@ -209,6 +237,34 @@ async function populateGifts() {
       price: 199.90,
       imageUrl: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQpnYoGsBCrNwaNrFsaz6tV9ymzIyo1cp94TdGTVdpP2ls4iX3FSqBO3nUTja5wS1HCqc9SUqMfLarYD0PYqV_G0sV0omElsDdOu9TuOO3VKVJkqTdaa1CJK-jkH4CPrrA9_WI1EyLUMw&usqp=CAc',
       status: true
+    },
+    {
+      name: 'Jogo de Xícaras',
+      description: 'Só tem 3, o resto quebrou',
+      price: 199.90,
+      imageUrl: 'assets/img/xicaras.jpeg',
+      status: false
+    },
+    {
+      name: 'Cesta de Café da Manhã',
+      description: 'Ajude o Alberson a fazer uma média com a Rafa',
+      price: 250.00,
+      imageUrl: 'assets/img/cesta.jpeg',
+      status: false
+    },
+    {
+      name: 'Liquidificador',
+      description: 'Pra fazer o suco de acerola da Tia Lucy',
+      price: 230.00,
+      imageUrl: 'assets/img/liquidificador.png',
+      status: false
+    },
+    {
+      name: 'Batedeira',
+      description: 'CHEGA DE BOLO SOLADO',
+      price: 250.00,
+      imageUrl: 'assets/img/batedeira.webp',
+      status: false
     },
   ];
 
